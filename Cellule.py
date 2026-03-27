@@ -27,6 +27,7 @@ class Cellule :
 
         canvas.tag_bind(self.rec, "<Button-1>", self.clic)
 
+
         # canvas.tag_bind(self.rec, "<B1_Motion>", self.clic)
         # <B1-Motion>
 
@@ -101,7 +102,6 @@ class Cellule :
 
         for i in (idVoisines):
             if 0 <= myId + i < len(Cellule.listeCellules):
-
                 listeVoisinesID.append(myId+i)
 
 
@@ -116,14 +116,18 @@ class Cellule :
 
 
     def clic (self, event):
-        
         if self.etat == 0:
             self.vivre()
         else:
             self.mourir()
-        
-    def evolution (self):
 
+    # def waw (self, event):
+    #     self.vivre()
+
+
+
+
+    def evolution (self):
         myEtat = self.get_etat()
         myVoisinesV = self.voisines()
         
